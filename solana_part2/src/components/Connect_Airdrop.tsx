@@ -1,5 +1,6 @@
 import { FC, useEffect, useState } from "react";
-import { Connection, PublicKey, clusterApiUrl } from "@solana/web3.js";
+import { PublicKey } from "@solana/web3.js";
+import Airdrop from "./Airdrop";
 
 
 type PhantomEvent = "disconnect" | "connect" | "accountChanged";
@@ -21,7 +22,7 @@ type WindowWithSolana = Window & {
 
 
 
-const Connect2Phantom: FC = () => {
+const ConnectAirdrop: FC = () => {
 
     const [ walletAvail, setWalletAvail ] = useState(false);
     const [ provider, setProvider ] = useState<PhantomProvider | null>(null);
@@ -74,7 +75,8 @@ const Connect2Phantom: FC = () => {
                 <>
                 <button disabled={connected} onClick={connectHandler}>Connect to Phantom</button>
                 <button disabled={!connected} onClick={disconnectHandler}>Disconnect from Phantom</button>
-                { connected ? <p>Your public key is : {pubKey?.toBase58()}</p> : null }
+                <hr/>
+                { connected && pubKey ? <Airdrop pubkey={pubKey} /> : null }
                 </>
             :
                 <>
@@ -85,4 +87,4 @@ const Connect2Phantom: FC = () => {
     );
 }
 
-export default Connect2Phantom;
+export default ConnectAirdrop;

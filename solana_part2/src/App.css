@@ -1,0 +1,48 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.p15 {
+  min-width: 15%;
+  display: inline-block;
+}
+
+form {
+  display: inline-block;
+  background-color: darkgray;
+  min-height: 30vh;
+  width: 70%;
+  text-align: left;
+}
+
+label {
+  display: inline-block;
+  margin: 10px 15%;
+}
+
+.input-text {
+  width: 70%;
+  margin: 10px 15%;
+}
+
+.input-submit {
+  width: 70%;
+  margin: 10px 15%;
+  border-radius: 4px;
+}
+
